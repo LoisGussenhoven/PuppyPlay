@@ -10,33 +10,32 @@
         android:id="@+id/AC_TV_Welcome"
         android:layout_width="0dp"
         android:layout_height="74dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:text="@string/welcome_talk"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.019" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/AC_ET_Name"
         android:layout_width="0dp"
         android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="@string/name"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/AC_BTN_Create"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AC_TV_Welcome" />
+        app:layout_constraintTop_toBottomOf="@+id/AC_TV_Welcome"
+        app:layout_constraintVertical_bias="0.127" />
 
     <EditText
         android:id="@+id/AC_ET_DogName"
@@ -82,12 +81,12 @@
         android:id="@+id/AC_BTN_Create"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="176dp"
         android:text="@string/create"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AC_RB_Female" />
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
