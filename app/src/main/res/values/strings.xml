@@ -7,4 +7,8 @@
     <string name="create">Aanmaken</string>
     <string name="welcome_talk">Welkom bij de app, de rest mag nick verzinnen</string>
     <string name="name_dog">Naam van je hond</string>
+    <string name="hunger">Honger</string>
+    <string name="thirst">Dorst</string>
+    <string name="poop">Poep</string>
+    <string name="social">Sociaal</string>
 </resources>

@@ -7,7 +7,7 @@
     tools:context="com.example.loisgussenhoven.puppyplay.PlayActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/AP_IV_Window"
         android:layout_width="200dp"
         android:layout_height="200dp"
         app:srcCompat="@color/colorPrimary"
@@ -15,7 +15,7 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/AP_IV_Puppy"
         android:layout_width="332dp"
         android:layout_height="237dp"
         app:srcCompat="@android:color/holo_blue_dark"
@@ -23,86 +23,113 @@
         tools:layout_editor_absoluteY="67dp" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/AP_PB_Hunger"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintStart_toEndOf="@+id/AP_TV_hunger"
+        app:layout_constraintTop_toBottomOf="@+id/AP_IV_Puppy" />
 
     <ProgressBar
-        android:id="@+id/progressBar2"
+        android:id="@+id/AP_PB_Thirst"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
         android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/AP_PB_Hunger"
+        app:layout_constraintStart_toEndOf="@+id/AP_TV_Thrist"
+        app:layout_constraintStart_toStartOf="@+id/AP_PB_Hunger"
+        app:layout_constraintTop_toBottomOf="@+id/AP_PB_Hunger" />
+
+    <ProgressBar
+        android:id="@+id/AP_PB_Poop"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/AP_PB_Thirst"
+        app:layout_constraintStart_toStartOf="@+id/AP_PB_Thirst"
+        app:layout_constraintTop_toBottomOf="@+id/AP_PB_Thirst" />
+
+    <TextView
+        android:id="@+id/AP_TV_hunger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/hunger"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/AP_PB_Hunger" />
+
+    <TextView
+        android:id="@+id/AP_TV_Thrist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/thirst"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/AP_PB_Thirst" />
+
+    <TextView
+        android:id="@+id/AP_TV_Poop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/poop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/AP_PB_Poop" />
+
+    <TextView
+        android:id="@+id/AP_TV_Social"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/social"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/AP_PB_Social" />
+
+    <ProgressBar
+        android:id="@+id/AP_PB_Social"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/AP_PB_Poop"
+        app:layout_constraintStart_toStartOf="@+id/AP_PB_Poop"
+        app:layout_constraintTop_toBottomOf="@+id/AP_PB_Poop" />
+
+    <ImageButton
+        android:id="@+id/AP_IB_Map"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/holo_orange_dark" />
+
+    <ImageButton
+        android:id="@+id/AP_IB_Friends"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/AP_IB_Map"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/progressBar"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+        app:layout_constraintStart_toStartOf="@+id/AP_IB_Map"
+        app:layout_constraintTop_toBottomOf="@+id/AP_IB_Map"
+        app:srcCompat="@android:color/holo_orange_dark" />
 
-    <ProgressBar
-        android:id="@+id/progressBar3"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="286dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/progressBar2"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/progressBar" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/progressBar2" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/progressBar3" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/progressBar4" />
-
-    <ProgressBar
-        android:id="@+id/progressBar4"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="286dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/progressBar3"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar3" />
+    <ImageButton
+        android:id="@+id/AP_IB_Settings"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/AP_IB_Friends"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/AP_IB_Friends"
+        app:layout_constraintTop_toBottomOf="@+id/AP_IB_Friends"
+        app:srcCompat="@android:color/holo_orange_dark" />
 </android.support.constraint.ConstraintLayout>

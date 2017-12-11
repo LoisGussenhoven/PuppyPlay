@@ -79,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/AC_ET_DogName" />
 
     <Button
-        android:id="@+id/AC_BTN_create"
+        android:id="@+id/AC_BTN_Create"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"

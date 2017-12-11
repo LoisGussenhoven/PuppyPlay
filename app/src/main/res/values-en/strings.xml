@@ -8,4 +8,10 @@
     <string name="create">Create</string>
     <string name="name_dog">Dog\'s name</string>
     <string name="female">Female</string>
+    <string name="Hunger">Hunger</string>
+    <string name="Thirst">Dorst</string>
+    <string name="poop">Poop</string>
+    <string name="thirst">Thirst</string>
+    <string name="hunger">Hunger</string>
+    <string name="social">Social</string>
 </resources>
