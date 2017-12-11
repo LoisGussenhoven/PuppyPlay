@@ -11,6 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="18dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="casual"
         android:text="@string/made_by"
         android:textAlignment="center"
         android:textColor="@android:color/darker_gray"
@@ -23,8 +24,8 @@
 
     <ImageView
         android:id="@+id/AM_IV_Logo"
-        android:layout_width="275dp"
-        android:layout_height="175dp"
+        android:layout_width="254dp"
+        android:layout_height="152dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -35,6 +36,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.112"
-        app:srcCompat="@color/colorAccent" />
+        app:srcCompat="@drawable/logo3" />
 
 </android.support.constraint.ConstraintLayout>
