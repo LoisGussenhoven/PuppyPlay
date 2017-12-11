@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PuppyPlay</string>
+    <string name="made_by">Gemaakt door Lois Gussenhoven en Nick van Endhoven</string>
+    <string name="name">Jouw naam</string>
+    <string name="female">Meisje</string>
+    <string name="male">Man</string>
+    <string name="create">Aanmaken</string>
+    <string name="welcome_talk">Welkom bij de app, de rest mag nick verzinnen</string>
+    <string name="name_dog">Naam van je hond</string>
+</resources>

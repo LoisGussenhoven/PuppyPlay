@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PuppyPlay</string>
+    <string name="made_by">Made by Lois Gussenhoven and Nick van Endhoven</string>
+    <string name="welcome_talk">Welcome to the app</string>
+    <string name="name">Your name</string>
+    <string name="male">Male</string>
+    <string name="create">Create</string>
+    <string name="name_dog">Dog\'s name</string>
+    <string name="female">Female</string>
+</resources>
