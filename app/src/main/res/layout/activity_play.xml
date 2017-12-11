@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ppbackground"
     tools:context="com.example.loisgussenhoven.puppyplay.PlayActivity">
 
     <ImageView
@@ -17,7 +18,7 @@
         app:layout_constraintStart_toStartOf="@+id/AP_IV_Puppy"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.193"
-        app:srcCompat="@color/colorPrimary" />
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
 
     <ImageView
         android:id="@+id/AP_IV_Puppy"
@@ -33,19 +34,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.101"
-        app:srcCompat="@android:color/holo_blue_dark" />
+        app:srcCompat="@android:drawable/ic_menu_report_image" />
 
     <ProgressBar
         android:id="@+id/AP_PB_Hunger"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
         android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/AP_TV_hunger"
-        app:layout_constraintTop_toBottomOf="@+id/AP_IV_Puppy" />
+        app:layout_constraintTop_toBottomOf="@+id/AP_IV_Puppy"
+        app:layout_constraintVertical_bias="0.2" />
 
     <ProgressBar
         android:id="@+id/AP_PB_Thirst"
@@ -75,6 +80,7 @@
         android:layout_marginStart="8dp"
         android:text="@string/hunger"
         android:textAlignment="viewStart"
+        android:textColor="@color/colorText"
         app:layout_constraintStart_toStartOf="@+id/AP_IV_Puppy"
         app:layout_constraintTop_toTopOf="@+id/AP_PB_Hunger" />
 
@@ -84,6 +90,7 @@
         android:layout_height="wrap_content"
         android:text="@string/thirst"
         android:textAlignment="textStart"
+        android:textColor="@color/colorText"
         app:layout_constraintStart_toStartOf="@+id/AP_TV_hunger"
         app:layout_constraintTop_toTopOf="@+id/AP_PB_Thirst" />
 
@@ -93,6 +100,7 @@
         android:layout_height="wrap_content"
         android:text="@string/poop"
         android:textAlignment="textStart"
+        android:textColor="@color/colorText"
         app:layout_constraintStart_toStartOf="@+id/AP_TV_Thrist"
         app:layout_constraintTop_toTopOf="@+id/AP_PB_Poop" />
 
@@ -102,6 +110,7 @@
         android:layout_height="wrap_content"
         android:text="@string/social"
         android:textAlignment="textStart"
+        android:textColor="@color/colorText"
         app:layout_constraintStart_toStartOf="@+id/AP_TV_Poop"
         app:layout_constraintTop_toTopOf="@+id/AP_PB_Social" />
 
@@ -117,36 +126,38 @@
 
     <ImageButton
         android:id="@+id/AP_IB_Map"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/ppmapbutton"
         android:contentDescription="Button to go to the map-activity"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:color/holo_orange_dark" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/AP_IB_Friends"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginTop="4dp"
+        android:background="@drawable/ppbookbutton"
         android:contentDescription="Button to go to the social-activity"
         app:layout_constraintEnd_toEndOf="@+id/AP_IB_Map"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/AP_IB_Map"
-        app:layout_constraintTop_toBottomOf="@+id/AP_IB_Map"
-        app:srcCompat="@android:color/holo_orange_dark" />
+        app:layout_constraintTop_toBottomOf="@+id/AP_IB_Map" />
 
     <ImageButton
         android:id="@+id/AP_IB_Settings"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginTop="4dp"
+        android:background="@drawable/ppsettingsbutton"
         android:contentDescription="Button to go to the settings-activity"
         app:layout_constraintEnd_toEndOf="@+id/AP_IB_Friends"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/AP_IB_Friends"
-        app:layout_constraintTop_toBottomOf="@+id/AP_IB_Friends"
-        app:srcCompat="@android:color/holo_orange_dark" />
+        app:layout_constraintTop_toBottomOf="@+id/AP_IB_Friends" />
 </android.support.constraint.ConstraintLayout>
