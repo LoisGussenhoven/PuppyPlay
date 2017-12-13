@@ -46,12 +46,14 @@ public class CreateActivity extends AppCompatActivity {
                 String selectedRadioButtonText = selectedRadioButton.getText().toString();
                 dog.setGender(selectedRadioButtonText);
 
+                //TODO: what if button isn't checked, empty name or empty dogname
+
                 Log.e("dog", dog.toString());
 
-                Intent i = new Intent(getApplicationContext(), PlayActivity.class);
-                i.putExtra("Dog", dog.getClass());
-                startActivity(i);
-                finish();
+//                Intent i = new Intent(getApplicationContext(), PlayActivity.class);
+//                i.putExtra("DOG", dog);
+//                startActivity(i);
+//                finish();
             }
         });
     }
