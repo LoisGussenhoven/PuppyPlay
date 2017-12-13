@@ -45,6 +45,8 @@
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
+        android:max="100"
+        android:min="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -58,6 +60,7 @@
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginTop="8dp"
+        android:max="100"
         app:layout_constraintEnd_toEndOf="@+id/AP_PB_Hunger"
         app:layout_constraintStart_toEndOf="@+id/AP_TV_Thrist"
         app:layout_constraintStart_toStartOf="@+id/AP_PB_Hunger"
@@ -69,9 +72,21 @@
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginTop="8dp"
+        android:max="100"
         app:layout_constraintEnd_toEndOf="@+id/AP_PB_Thirst"
         app:layout_constraintStart_toStartOf="@+id/AP_PB_Thirst"
         app:layout_constraintTop_toBottomOf="@+id/AP_PB_Thirst" />
+
+    <ProgressBar
+        android:id="@+id/AP_PB_Social"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:max="100"
+        app:layout_constraintEnd_toEndOf="@+id/AP_PB_Poop"
+        app:layout_constraintStart_toStartOf="@+id/AP_PB_Poop"
+        app:layout_constraintTop_toBottomOf="@+id/AP_PB_Poop" />
 
     <TextView
         android:id="@+id/AP_TV_hunger"
@@ -82,7 +97,9 @@
         android:textAlignment="viewStart"
         android:textColor="@color/colorText"
         app:layout_constraintStart_toStartOf="@+id/AP_IV_Puppy"
-        app:layout_constraintTop_toTopOf="@+id/AP_PB_Hunger" />
+        app:layout_constraintTop_toTopOf="@+id/AP_PB_Hunger"
+        android:gravity="start"
+        android:layout_marginLeft="8dp" />
 
     <TextView
         android:id="@+id/AP_TV_Thrist"
@@ -92,7 +109,8 @@
         android:textAlignment="textStart"
         android:textColor="@color/colorText"
         app:layout_constraintStart_toStartOf="@+id/AP_TV_hunger"
-        app:layout_constraintTop_toTopOf="@+id/AP_PB_Thirst" />
+        app:layout_constraintTop_toTopOf="@+id/AP_PB_Thirst"
+        android:gravity="start" />
 
     <TextView
         android:id="@+id/AP_TV_Poop"
@@ -102,7 +120,8 @@
         android:textAlignment="textStart"
         android:textColor="@color/colorText"
         app:layout_constraintStart_toStartOf="@+id/AP_TV_Thrist"
-        app:layout_constraintTop_toTopOf="@+id/AP_PB_Poop" />
+        app:layout_constraintTop_toTopOf="@+id/AP_PB_Poop"
+        android:gravity="start" />
 
     <TextView
         android:id="@+id/AP_TV_Social"
@@ -112,17 +131,8 @@
         android:textAlignment="textStart"
         android:textColor="@color/colorText"
         app:layout_constraintStart_toStartOf="@+id/AP_TV_Poop"
-        app:layout_constraintTop_toTopOf="@+id/AP_PB_Social" />
-
-    <ProgressBar
-        android:id="@+id/AP_PB_Social"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/AP_PB_Poop"
-        app:layout_constraintStart_toStartOf="@+id/AP_PB_Poop"
-        app:layout_constraintTop_toBottomOf="@+id/AP_PB_Poop" />
+        app:layout_constraintTop_toTopOf="@+id/AP_PB_Social"
+        android:gravity="start" />
 
     <ImageButton
         android:id="@+id/AP_IB_Map"
@@ -135,7 +145,8 @@
         android:cropToPadding="false"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="8dp" />
 
     <ImageButton
         android:id="@+id/AP_IB_Friends"

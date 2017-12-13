@@ -11,10 +11,11 @@
         android:id="@+id/AC_TV_Welcome"
         android:layout_width="0dp"
         android:layout_height="74dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:text="@string/welcome_talk"
+        android:textAlignment="center"
         android:textColor="@color/colorText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
@@ -37,13 +38,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AC_TV_Welcome"
-        app:layout_constraintVertical_bias="0.168" />
+        app:layout_constraintVertical_bias="0.048" />
 
     <EditText
         android:id="@+id/AC_ET_DogName"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/name_dog"
         android:inputType="textPersonName"
@@ -52,32 +53,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/AC_ET_Name"
         app:layout_constraintTop_toBottomOf="@+id/AC_ET_Name" />
-
-    <RadioButton
-        android:id="@+id/AC_RB_Female"
-        android:layout_width="99dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/female"
-        app:layout_constraintEnd_toEndOf="@+id/AC_ET_DogName"
-        app:layout_constraintHorizontal_bias="0.252"
-        app:layout_constraintStart_toEndOf="@+id/AC_RB_Male"
-        app:layout_constraintTop_toBottomOf="@+id/AC_ET_DogName" />
-
-    <RadioButton
-        android:id="@+id/AC_RB_Male"
-        android:layout_width="82dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/male"
-        app:layout_constraintEnd_toEndOf="@+id/AC_ET_DogName"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/AC_ET_DogName"
-        app:layout_constraintTop_toBottomOf="@+id/AC_ET_DogName" />
 
     <Button
         android:id="@+id/AC_BTN_Create"
@@ -93,4 +68,44 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/AC_RG_Gender"
+        android:layout_width="234dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/AC_ET_DogName"
+        app:layout_constraintTop_toBottomOf="@+id/AC_ET_DogName">
+
+        <RadioButton
+            android:id="@+id/AC_RB_Female"
+            android:layout_width="215dp"
+            android:layout_height="21dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:text="@string/female"
+            app:layout_constraintEnd_toEndOf="@+id/AC_ET_DogName"
+            app:layout_constraintHorizontal_bias="0.252"
+            app:layout_constraintStart_toEndOf="@+id/AC_RB_Male"
+            app:layout_constraintTop_toBottomOf="@+id/AC_ET_DogName" />
+
+        <RadioButton
+            android:id="@+id/AC_RB_Male"
+            android:layout_width="213dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:text="@string/male"
+            app:layout_constraintEnd_toEndOf="@+id/AC_ET_DogName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/AC_ET_DogName"
+            app:layout_constraintTop_toBottomOf="@+id/AC_ET_DogName" />
+    </RadioGroup>
+
 </android.support.constraint.ConstraintLayout>
