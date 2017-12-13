@@ -15,7 +15,7 @@
         android:fontFamily="casual"
         android:text="@string/made_by"
         android:textAlignment="center"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="?attr/actionMenuTextColor"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
