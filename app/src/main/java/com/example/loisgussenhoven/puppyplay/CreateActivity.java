@@ -50,10 +50,10 @@ public class CreateActivity extends AppCompatActivity {
 
                 Log.e("dog", dog.toString());
 
-//                Intent i = new Intent(getApplicationContext(), PlayActivity.class);
-//                i.putExtra("DOG", dog);
-//                startActivity(i);
-//                finish();
+                Intent i = new Intent(getApplicationContext(), PlayActivity.class);
+                i.putExtra("DOG", dog);
+                startActivity(i);
+                finish();
             }
         });
     }

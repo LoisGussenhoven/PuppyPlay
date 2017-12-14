@@ -1,10 +1,12 @@
 package com.example.loisgussenhoven.puppyplay;
 
+import java.io.Serializable;
+
 /**
  * Created by Lois Gussenhoven on 13-12-2017.
  */
 
-public class Dog {
+public class Dog implements Serializable {
     public String name;
     public String nameOwner;
     public String gender;
