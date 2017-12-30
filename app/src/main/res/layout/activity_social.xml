@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ppbackground"
-    tools:context="com.example.loisgussenhoven.puppyplay.SocialActivity">
+    tools:context="com.example.loisgussenhoven.puppyplay.SessionActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/social_rv_sessions"

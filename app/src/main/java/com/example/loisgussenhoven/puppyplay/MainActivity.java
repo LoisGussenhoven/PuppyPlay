@@ -24,9 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
         DBObject.init(getApplicationContext());
 
-        // TODO: Load Sessions
-        // TODO: 30-Dec-17  Create test data
-
         new Timer().schedule(new TimerTask() {
             public void run() {
                 startActivity(new Intent(MainActivity.this, CreateActivity.class));

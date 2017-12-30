@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class SocialActivity extends AppCompatActivity {
+public class SessionActivity extends AppCompatActivity {
 
 
     @Override

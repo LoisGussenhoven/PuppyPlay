@@ -23,7 +23,7 @@
         <activity android:name=".PlayActivity" />
         <activity android:name=".Mapctivity" />
         <activity android:name=".MapActivity" />
-        <activity android:name=".SocialActivity"></activity>
+        <activity android:name=".SessionActivity"></activity>
     </application>
 
 </manifest>

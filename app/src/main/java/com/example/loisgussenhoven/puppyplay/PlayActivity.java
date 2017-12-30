@@ -41,7 +41,7 @@ public class PlayActivity extends AppCompatActivity{
         btnSessions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), SocialActivity.class);
+                Intent i = new Intent(getApplicationContext(), SessionActivity.class);
                 startActivity(i);
             }
         });
