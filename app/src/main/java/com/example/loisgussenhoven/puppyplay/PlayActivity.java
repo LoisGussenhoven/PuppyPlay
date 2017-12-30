@@ -3,7 +3,11 @@ package com.example.loisgussenhoven.puppyplay;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
+
+import com.example.loisgussenhoven.puppyplay.Entity.Dog;
 
 
 public class PlayActivity extends AppCompatActivity{
@@ -33,6 +37,15 @@ public class PlayActivity extends AppCompatActivity{
         social = findViewById(R.id.AP_PB_Social);
         social.setProgress(dog.getSocial());
 
+        ImageButton btnSessions = findViewById(R.id.AP_IB_Friends);
+        btnSessions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), SocialActivity.class);
+                startActivity(i);
+            }
+        });
 
+        // TODO: 30-Dec-17 Disable back button 
     }
 }

@@ -10,16 +10,14 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.example.loisgussenhoven.puppyplay.Entity.Dog;
+
 public class CreateActivity extends AppCompatActivity {
         public Button BTN_Create;
         public String name = "";
         public String dogName = "";
         public String gender = "";
-        public String colour = "";
-        public int hunger = 100;
-        public int thirst = 100;
-        public int poop = 100;
-        public int social = 100;
+        public int colour = 0;
 
 
     @Override
@@ -30,7 +28,7 @@ public class CreateActivity extends AppCompatActivity {
         BTN_Create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dog dog = new Dog(dogName, name, colour, gender, hunger, thirst, poop, social);
+                Dog dog = new Dog(dogName, name, gender, colour);
 
                 //TODO: set colour of dog
 
@@ -57,4 +55,6 @@ public class CreateActivity extends AppCompatActivity {
             }
         });
     }
+
+    // TODO: 30-Dec-17 Disable back button
 }
