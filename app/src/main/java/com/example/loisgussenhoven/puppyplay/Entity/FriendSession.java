@@ -1,8 +1,7 @@
 package com.example.loisgussenhoven.puppyplay.Entity;
 
+import android.graphics.Bitmap;
 import android.location.Location;
-import android.support.v7.widget.RecyclerView;
-
 import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
@@ -19,6 +18,7 @@ public class FriendSession implements Serializable{
     private String duration;
     private Dog other;
     private Location location;
+    private Bitmap image;
 
     public FriendSession(String uuid, Date date, String time, String duration, Dog other, Location location) {
         this.uuid =  uuid;
@@ -37,7 +37,6 @@ public class FriendSession implements Serializable{
         this.other = other;
         this.location = location;
     }
-
 
     public String getUuid() {
         return uuid;
@@ -62,4 +61,5 @@ public class FriendSession implements Serializable{
     public Location getLocation() {
         return location;
     }
+
 }

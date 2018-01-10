@@ -26,6 +26,8 @@ public class SessionActivity extends AppCompatActivity {
         List<FriendSession> sessions = DBObject.getInstanceOf().getSession().getAllSessions();
         SessionAdapter adapter = new SessionAdapter(sessions);
 
+
+
         RecyclerView rvSessions = findViewById(R.id.social_rv_sessions);
         rvSessions.setLayoutManager(new LinearLayoutManager(this));
         rvSessions.setAdapter(adapter);

@@ -1,5 +1,6 @@
 package com.example.loisgussenhoven.puppyplay.Adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.loisgussenhoven.puppyplay.Entity.FriendSession;
 import com.example.loisgussenhoven.puppyplay.R;
+import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -21,6 +23,7 @@ import java.util.List;
 public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.ViewHolder> {
 
     public List<FriendSession> sessions;
+    Context context;
 
     public SessionAdapter(List<FriendSession> sessions) {
         this.sessions = sessions;
@@ -28,6 +31,7 @@ public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.ViewHold
 
     @Override
     public SessionAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        context = parent.getContext();
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_social, parent, false);
         return new ViewHolder(view);
     }
@@ -41,15 +45,12 @@ public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.ViewHold
 
         SimpleDateFormat df= new SimpleDateFormat("dd MMMM yyyy");
         holder.tvTimeStamp.setText(df.format(session.getDate()) + "\t\t\t" + session.getTime());
-        
-        //// TODO: 30-Dec-17 Add duration
 
-        holder.view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // TODO: 30-Dec-17 Goto detail 
-            }
-        });
+        Picasso.with(context).load("https://maps.googleapis.com/maps/api/" +
+                "staticmap?center=" + session.getLocation().getLatitude() + "," + session.getLocation().getLongitude() + "&zoom=16&size=600x400&markers=color:red|label:"
+                + session.getOther().getName() + "|" + session.getLocation().getLatitude() + "," + session.getLocation().getLongitude()
+        ).into(holder.ivLoc);
+
     }
 
     @Override
@@ -61,6 +62,7 @@ public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.ViewHold
         public View view;
         public TextView tvDogName, tvOwnerName, tvTimeStamp;
         public ImageView ivDog;
+        public ImageView ivLoc;
 
         public ViewHolder(View view) {
             super(view);
@@ -69,6 +71,7 @@ public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.ViewHold
             tvOwnerName =  view.findViewById(R.id.list_social_tv_owner);
             tvTimeStamp =  view.findViewById(R.id.list_social_date_time);
             ivDog =  view.findViewById(R.id.list_social_dog_image);
+            ivLoc = view.findViewById(R.id.list_social_iv_location);
         }
     }
 }
