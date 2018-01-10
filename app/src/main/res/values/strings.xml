@@ -11,4 +11,5 @@
     <string name="thirst">Dorst</string>
     <string name="poop">Poep</string>
     <string name="social">Sociaal</string>
+    <string name="loading">laden</string>
 </resources>

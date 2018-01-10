@@ -5,13 +5,11 @@ import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.loisgussenhoven.puppyplay.ApiHandling.ApiHandler;
 import com.example.loisgussenhoven.puppyplay.Datalayer.DBObject;
 import com.example.loisgussenhoven.puppyplay.Entity.Dog;
 import com.example.loisgussenhoven.puppyplay.Entity.FriendSession;
-
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -23,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         DBObject.init(getApplicationContext());
+        ApiHandler.init(getApplicationContext());
 
         new Timer().schedule(new TimerTask() {
             public void run() {
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         }, 2000);
 
         // Disable this for test sessions
-        //testSessions();
+        testSessions();
     }
 
     private void testSessions(){
@@ -39,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         Dog d2 = new Dog("Spronko", "Paardu Staart", "female", 1);
 
         Location loc = new Location("");
-        loc.setLongitude(10f);
-        loc.setLatitude(10f);
+        loc.setLongitude(4.754586f);
+        loc.setLatitude(51.573752f);
 
         FriendSession f1 = new FriendSession(new Date(), "13:47", "12", d1, loc);
         FriendSession f2 = new FriendSession(new Date(), "14:01", "10", d2, loc);
