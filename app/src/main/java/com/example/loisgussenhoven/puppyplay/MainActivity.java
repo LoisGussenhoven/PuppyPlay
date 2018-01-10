@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 2000);
 
-        // Disable this for test sessions
-        //testSessions();
+        // Enable this for test sessions
+        // testSessions();
     }
 
     private void testSessions(){
