@@ -18,7 +18,6 @@ public class FriendSession implements Serializable{
     private String duration;
     private Dog other;
     private Location location;
-    private Bitmap image;
 
     public FriendSession(String uuid, Date date, String time, String duration, Dog other, Location location) {
         this.uuid =  uuid;

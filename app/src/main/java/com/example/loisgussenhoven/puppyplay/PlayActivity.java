@@ -46,6 +46,15 @@ public class PlayActivity extends AppCompatActivity{
             }
         });
 
+        ImageButton btnMaps = findViewById(R.id.AP_IB_Map);
+        btnMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), MapsActivity.class);
+                startActivity(i);
+            }
+        });
+
         // TODO: 30-Dec-17 Disable back button 
     }
 }
