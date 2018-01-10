@@ -55,6 +55,17 @@ public class PlayActivity extends AppCompatActivity{
             }
         });
 
+        ImageButton btnNeeds = findViewById(R.id.AP_IB_Needs);
+        btnNeeds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(dog.getThirst() < 100 || dog.getHunger() < 100)
+                    thirst.setProgress(dog.getThirst() + 100);
+                    hunger.setProgress(dog.getHunger() + 100);
+
+            }
+        });
+
         // TODO: 30-Dec-17 Disable back button 
     }
 }
