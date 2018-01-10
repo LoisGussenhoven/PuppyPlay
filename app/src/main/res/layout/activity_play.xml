@@ -127,8 +127,6 @@
                 android:layout_height="30dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginStart="32dp"
-                android:max="100"
-                android:min="0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/AP_TV_hunger"
                 tools:layout_editor_absoluteY="8dp" />

@@ -135,4 +135,15 @@ public class Dog implements Serializable {
                 ", social=" + social +
                 '}';
     }
+
+    public void live() {
+        if(thirst > 0 )
+            setThirst(thirst - 20);
+        if (hunger > 0)
+            setHunger(hunger - 20);
+       if (social >0)
+           setSocial(social - 5);
+       if (poop > 0)
+        setPoop(poop - 5);
+    }
 }
