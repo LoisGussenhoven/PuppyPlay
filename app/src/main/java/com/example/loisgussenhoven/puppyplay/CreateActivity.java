@@ -39,8 +39,6 @@ public class CreateActivity extends AppCompatActivity {
             int selectedRadioButtonID = radioGroup.getCheckedRadioButtonId();
             RadioButton selectedRadioButton = findViewById(selectedRadioButtonID);
 
-            //TODO: set colour of dog
-
             if(name != "" || dogName != "" || selectedRadioButton != null) {
                 dog.setNameOwner(ET_Name.getText().toString());
                 dog.setName(ET_DogName.getText().toString());
@@ -48,13 +46,10 @@ public class CreateActivity extends AppCompatActivity {
                 dog.setGender(selectedRadioButtonText);
 
                 Log.e("dog", dog.toString());
-
                 Intent i = new Intent(getApplicationContext(), PlayActivity.class);
                 i.putExtra("DOG", dog);
                 startActivity(i);
                 finish();
-
-
             }
             else {
                 Toast.makeText(getApplicationContext(),R.string.AllInfo, Toast.LENGTH_LONG).show();

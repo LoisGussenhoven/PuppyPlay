@@ -1,6 +1,7 @@
 package com.example.loisgussenhoven.puppyplay;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -36,11 +37,10 @@ public class PlayActivity extends AppCompatActivity{
         poop = findViewById(R.id.AP_PB_Poop);
         social = findViewById(R.id.AP_PB_Social);
 
-        hunger.setProgress(dog.getHunger());
-        hunger.setMax(100);
-        thirst.setProgress(dog.getThirst());
-        poop.setProgress(dog.getPoop());
-        social.setProgress(dog.getSocial());
+        hunger.setProgress((int)dog.getHunger());
+        thirst.setProgress((int)dog.getThirst());
+        poop.setProgress((int)dog.getPoop());
+        social.setProgress((int)dog.getSocial());
 
 
         Timer timer = new Timer();
@@ -48,14 +48,14 @@ public class PlayActivity extends AppCompatActivity{
             @Override
             public void run () {
                 dog.live();
-                hunger.post(() -> hunger.setProgress(dog.getHunger()));
-                thirst.setProgress(dog.getThirst());
-                poop.setProgress(dog.getPoop());
-                social.setProgress(dog.getSocial());
+                hunger.post(() -> hunger.setProgress((int)dog.getHunger()));
+                thirst.post(() -> thirst.setProgress((int)dog.getThirst()));
+                poop.post(() -> poop.setProgress((int)dog.getPoop()));
+                social.post(() -> social.setProgress((int)dog.getSocial()));
+                social.getProgress();
 
             }
-        };timer.schedule (hourlyTask,1000*60);
-        hunger.post(() -> hunger.setProgress(dog.getHunger()));
+        };timer.schedule (hourlyTask,0,1000);
 
         ImageButton btnSessions = findViewById(R.id.AP_IB_Friends);
         btnSessions.setOnClickListener(view -> {
@@ -72,8 +72,8 @@ public class PlayActivity extends AppCompatActivity{
         ImageButton btnNeeds = findViewById(R.id.AP_IB_Needs);
         btnNeeds.setOnClickListener(view -> {
             if(dog.getThirst() < 100 || dog.getHunger() < 100)
-                thirst.setProgress(dog.getThirst() + 100);
-                hunger.setProgress(dog.getHunger() + 100);
+                thirst.setProgress((int)dog.getThirst() + 100);
+                hunger.setProgress((int)dog.getHunger() + 100);
 
         });
 

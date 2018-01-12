@@ -15,12 +15,12 @@ public class Dog implements Serializable {
     private String nameOwner;
     private String gender;  // TODO: 30-Dec-17 Change gender to bool 
     private int colour;
-    private int hunger;
-    private int thirst;
-    private int poop;
-    private int social;
+    private double hunger;
+    private double thirst;
+    private double poop;
+    private double social;
 
-    public Dog(String name, String nameOwner, String gender, int colour, int hunger, int thirst, int poop, int social) {
+    public Dog(String name, String nameOwner, String gender, int colour, double hunger, double thirst, double poop, double social) {
         this.name = name;
         this.nameOwner = nameOwner;
         this.colour = colour;
@@ -74,19 +74,19 @@ public class Dog implements Serializable {
         return colour;
     }
 
-    public int getHunger() {
+    public double getHunger() {
         return hunger;
     }
 
-    public int getThirst() {
+    public double getThirst() {
         return thirst;
     }
 
-    public int getPoop() {
+    public double getPoop() {
         return poop;
     }
 
-    public int getSocial() {
+    public double getSocial() {
         return social;
     }
 
@@ -106,19 +106,19 @@ public class Dog implements Serializable {
         this.colour = colour;
     }
 
-    public void setHunger(int hunger) {
+    public void setHunger(double hunger) {
         this.hunger = hunger;
     }
 
-    public void setThirst(int thirst) {
+    public void setThirst(double thirst) {
         this.thirst = thirst;
     }
 
-    public void setPoop(int poop) {
+    public void setPoop(double poop) {
         this.poop = poop;
     }
 
-    public void setSocial(int social) {
+    public void setSocial(double social) {
         this.social = social;
     }
 
@@ -138,12 +138,12 @@ public class Dog implements Serializable {
 
     public void live() {
         if(thirst > 0 )
-            setThirst(thirst - 20);
+            setThirst(thirst - 0.5);
         if (hunger > 0)
-            setHunger(hunger - 20);
+            setHunger(hunger - 0.5);
        if (social >0)
-           setSocial(social - 5);
+           setSocial(social - 0.1);
        if (poop > 0)
-        setPoop(poop - 5);
+        setPoop(poop - 0.1);
     }
 }
