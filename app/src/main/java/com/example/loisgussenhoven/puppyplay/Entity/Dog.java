@@ -144,6 +144,6 @@ public class Dog implements Serializable {
        if (social >0)
            setSocial(social - 0.1);
        if (poop > 0)
-        setPoop(poop - 0.1);
+        setPoop(poop + 0.1);
     }
 }
