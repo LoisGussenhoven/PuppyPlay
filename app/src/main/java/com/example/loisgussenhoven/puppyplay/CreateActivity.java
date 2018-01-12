@@ -41,11 +41,7 @@ public class CreateActivity extends AppCompatActivity {
 
             //TODO: set colour of dog
 
-            if(name == "" || dogName == "" || selectedRadioButton == null) {
-                Toast.makeText(getApplicationContext(),R.string.AllInfo, Toast.LENGTH_LONG).show();
-            }
-            else {
-
+            if(name != "" || dogName != "" || selectedRadioButton != null) {
                 dog.setNameOwner(ET_Name.getText().toString());
                 dog.setName(ET_DogName.getText().toString());
                 String selectedRadioButtonText = selectedRadioButton.getText().toString();
@@ -57,6 +53,12 @@ public class CreateActivity extends AppCompatActivity {
                 i.putExtra("DOG", dog);
                 startActivity(i);
                 finish();
+
+
+            }
+            else {
+                Toast.makeText(getApplicationContext(),R.string.AllInfo, Toast.LENGTH_LONG).show();
+
             }
 
 
