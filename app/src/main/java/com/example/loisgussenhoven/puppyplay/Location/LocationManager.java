@@ -11,6 +11,7 @@ import android.os.Looper;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
+import com.example.loisgussenhoven.puppyplay.Manager;
 import com.example.loisgussenhoven.puppyplay.MapsActivity;
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.GeofencingClient;
@@ -50,7 +51,6 @@ public class LocationManager implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
-
     }
 
     @Override

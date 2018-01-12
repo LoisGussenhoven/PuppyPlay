@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
         }, 2000);
 
         // Disable this for test sessions
-        testSessions();
+        //testSessions();
+
+        // TODO: 12-1-2018 Read your dog data 
     }
 
     private void testSessions(){

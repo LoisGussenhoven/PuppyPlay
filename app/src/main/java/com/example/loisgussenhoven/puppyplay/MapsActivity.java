@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.loisgussenhoven.puppyplay.Location.LocationManager;
@@ -30,17 +31,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private boolean mLocationPermissionGranted;
     private LocationManager locationManager;
 
+    Location location = new Location("");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         locationManager = new LocationManager(this);
+        location.setLongitude(0);
+        location.setLatitude(0);
 
         setContentView(R.layout.activity_maps);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        ImageButton btnSocial = findViewById(R.id.maps_ib_play);
+        btnSocial.setOnClickListener(view -> {
+            Intent i = new Intent(getApplicationContext(), SocialActivity.class);
+            i.putExtra("LAT", location.getLatitude());
+            i.putExtra("LONG", location.getLongitude());
+            startActivity(i);
+        });
 
         locationManager.startLocationUpdates();
     }
@@ -100,6 +113,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void newLocationAvailable(Location lastLocation) {
+        this.location = lastLocation;
     }
 
     class GoogleReceiver extends BroadcastReceiver {
