@@ -60,5 +60,7 @@ public class CreateActivity extends AppCompatActivity {
         });
     }
 
-    // TODO: 30-Dec-17 Disable back button
+    @Override
+    public void onBackPressed() {
+    }
 }

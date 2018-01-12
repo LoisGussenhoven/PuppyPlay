@@ -138,7 +138,7 @@ public class LocationManager implements LocationListener {
         removeAllGeofences();
 
         if(gfc != null) {
-            // TODO: for players
+            // TODO: Add geofences
 //            for(Poi poi : r.getAllPoints()) {
 //                if(poi.isOnRoute()) {
 //                    try {
