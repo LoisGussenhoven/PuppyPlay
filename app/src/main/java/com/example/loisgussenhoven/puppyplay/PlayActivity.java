@@ -54,7 +54,7 @@ public class PlayActivity extends AppCompatActivity{
                 social.setProgress(dog.getSocial());
 
             }
-        };timer.schedule (hourlyTask,1000);
+        };timer.schedule (hourlyTask,1000*60);
         hunger.post(() -> hunger.setProgress(dog.getHunger()));
 
         ImageButton btnSessions = findViewById(R.id.AP_IB_Friends);
