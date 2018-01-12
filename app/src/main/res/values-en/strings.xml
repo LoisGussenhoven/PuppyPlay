@@ -9,6 +9,7 @@
     <string name="name_dog">Dog\'s name</string>
     <string name="female">Female dog</string>
     <string name="poop">Poop</string>
+    <string name="allInfo">Fill in all the data</string>
     <string name="thirst">Thirst</string>
     <string name="hunger">Hunger</string>
     <string name="social">Social</string>
