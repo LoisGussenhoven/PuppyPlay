@@ -1,6 +1,8 @@
 package com.example.loisgussenhoven.puppyplay;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -8,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.example.loisgussenhoven.puppyplay.Entity.Dog;
@@ -42,6 +45,10 @@ public class PlayActivity extends AppCompatActivity{
         poop.setProgress((int)dog.getPoop());
         social.setProgress((int)dog.getSocial());
 
+        ImageView layer = findViewById(R.id.AP_IV_Puppy_layer1);
+        layer.setColorFilter(Color.parseColor("#" + Manager.yourDog.getColor1()), PorterDuff.Mode.MULTIPLY );
+        ImageView layer2 = findViewById(R.id.AP_IV_Puppy_layer2);
+        layer2.setColorFilter(Color.parseColor("#" + Manager.yourDog.getColor2()), PorterDuff.Mode.MULTIPLY );
 
         Timer timer = new Timer();
         TimerTask hourlyTask = new TimerTask () {

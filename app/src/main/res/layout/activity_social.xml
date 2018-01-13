@@ -8,7 +8,7 @@
     tools:context="com.example.loisgussenhoven.puppyplay.SocialActivity">
 
     <ImageView
-        android:id="@+id/social_iv_dog_other"
+        android:id="@+id/social_iv_dog_other_1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
@@ -19,23 +19,83 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/social_tv_name_other"
-        app:srcCompat="@drawable/brown" />
+        app:srcCompat="@drawable/dog_layer1" />
 
     <ImageView
-        android:id="@+id/social_iv_dog_self"
+        android:id="@+id/social_iv_dog_other_2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:scaleX="-1"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/social_tv_name_other"
+        app:srcCompat="@drawable/dog_layer2" />
+
+    <ImageView
+        android:id="@+id/social_iv_dog_other_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/social_tv_name_other"
+        app:srcCompat="@drawable/dog_layer3" />
+
+    <ImageView
+        android:id="@+id/social_iv_dog_self_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:scaleX="-1"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/social_tv_name_self"
-        app:srcCompat="@drawable/brown" />
+        app:srcCompat="@drawable/dog_layer1" />
+
+    <ImageView
+        android:id="@+id/social_iv_dog_self_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleX="-1"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/social_tv_name_self"
+        app:srcCompat="@drawable/dog_layer2" />
+
+    <ImageView
+        android:id="@+id/social_iv_dog_self_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleX="-1"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/social_tv_name_self"
+        app:srcCompat="@drawable/dog_layer3" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"

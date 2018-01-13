@@ -14,16 +14,18 @@ public class Dog implements Serializable {
     private String name;
     private String nameOwner;
     private String gender;  // TODO: 30-Dec-17 Change gender to bool 
-    private int colour;
+    private String color1;
+    private String color2;
     private double hunger;
     private double thirst;
     private double poop;
     private double social;
 
-    public Dog(String name, String nameOwner, String gender, int colour, double hunger, double thirst, double poop, double social) {
+    public Dog(String name, String nameOwner, String gender, String color1, String color2, double hunger, double thirst, double poop, double social) {
         this.name = name;
         this.nameOwner = nameOwner;
-        this.colour = colour;
+        this.color1 = color1;
+        this.color2 = color2;
         this.gender = gender;
         this.hunger = hunger;
         this.thirst = thirst;
@@ -31,11 +33,12 @@ public class Dog implements Serializable {
         this.social = social;
     }
 
-    public Dog(String uuid, String name, String nameOwner, String gender, int colour) {
+    public Dog(String uuid, String name, String nameOwner, String gender, String color1, String color2) {
         this.uuid = uuid;
         this.name = name;
         this.nameOwner = nameOwner;
-        this.colour = colour;
+        this.color1 = color1;
+        this.color2 = color2;
         this.gender = gender;
         this.hunger = 100;
         this.thirst = 100;
@@ -43,10 +46,11 @@ public class Dog implements Serializable {
         this.social = 100;
     }
 
-    public Dog(String name, String nameOwner, String gender, int colour) {
+    public Dog(String name, String nameOwner, String gender, String color1, String color2) {
         this.name = name;
         this.nameOwner = nameOwner;
-        this.colour = colour;
+        this.color1 = color1;
+        this.color2 = color2;
         this.gender = gender;
         this.hunger = 100;
         this.thirst = 100;
@@ -70,9 +74,6 @@ public class Dog implements Serializable {
         return gender;
     }
 
-    public int getColour() {
-        return colour;
-    }
 
     public double getHunger() {
         return hunger;
@@ -102,10 +103,6 @@ public class Dog implements Serializable {
         this.gender = gender;
     }
 
-    public void setColour(int colour) {
-        this.colour = colour;
-    }
-
     public void setHunger(double hunger) {
         this.hunger = hunger;
     }
@@ -122,18 +119,20 @@ public class Dog implements Serializable {
         this.social = social;
     }
 
-    @Override
-    public String toString() {
-        return "Dog{" +
-                "name='" + name + '\'' +
-                ", nameOwner='" + nameOwner + '\'' +
-                ", gender='" + gender + '\'' +
-                ", colour='" + colour + '\'' +
-                ", hunger=" + hunger +
-                ", thirst=" + thirst +
-                ", poop=" + poop +
-                ", social=" + social +
-                '}';
+    public String getColor1() {
+        return color1;
+    }
+
+    public void setColor1(String color1) {
+        this.color1 = color1;
+    }
+
+    public String getColor2() {
+        return color2;
+    }
+
+    public void setColor2(String color2) {
+        this.color2 = color2;
     }
 
     public void live() {

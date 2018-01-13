@@ -24,7 +24,8 @@ public class DAODog {
     public static final String COLUMN_NAME = "NAME";
     public static final String COLUMN_OWNER = "OWNER";
     public static final String COLUMN_GENDER = "GENDER";
-    public static final String COLUMN_COLOR = "COLOR";
+    public static final String COLUMN_COLOR1 = "COLOR1";
+    public static final String COLUMN_COLOR2 = "COLOR2";
 
     public static final String DICTIONARY_TABLE_CREATE =
             "CREATE TABLE " + DICTIONARY_TABLE_NAME + " (" +
@@ -32,7 +33,8 @@ public class DAODog {
                     COLUMN_NAME + " VARCHAR(250) NOT NULL," +
                     COLUMN_OWNER + " VARCHAR(255) NOT NULL, " +
                     COLUMN_GENDER + " VARCHAR(15) NOT NULL, " +
-                    COLUMN_COLOR + " INT NOT NULL" +
+                    COLUMN_COLOR1 + " VARCHAR(6) NOT NULL," +
+                    COLUMN_COLOR2 + " VARCHAR(6) NOT NULL" +
                     ");";
 
     DBObject db;
@@ -51,7 +53,8 @@ public class DAODog {
                 d.getName() + "', '" +
                 d.getNameOwner()  + "', '" +
                 d.getGender()  + "', '" +
-                d.getColour()  +
+                d.getColor1()  + "', '" +
+                d.getColor2()  +
                 "')";
 
         SQLiteDatabase database = db.getWritableDatabase();
@@ -70,7 +73,7 @@ public class DAODog {
 
     public Dog getDogById(String uuid){
         SQLiteDatabase database = db.getReadableDatabase();
-        Cursor cursor = database.query(DICTIONARY_TABLE_NAME, new String[]{COLUMN_UUID, COLUMN_NAME, COLUMN_OWNER, COLUMN_GENDER, COLUMN_COLOR}, COLUMN_UUID + " = '" + uuid + "'", null, null, null, null);
+        Cursor cursor = database.query(DICTIONARY_TABLE_NAME, new String[]{COLUMN_UUID, COLUMN_NAME, COLUMN_OWNER, COLUMN_GENDER, COLUMN_COLOR1, COLUMN_COLOR2}, COLUMN_UUID + " = '" + uuid + "'", null, null, null, null);
         if(cursor.moveToFirst()) {
             do {
 
@@ -78,9 +81,10 @@ public class DAODog {
                 String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
                 String owner = cursor.getString(cursor.getColumnIndex(COLUMN_OWNER));
                 String gender = cursor.getString(cursor.getColumnIndex(COLUMN_GENDER));
-                int color = cursor.getInt(cursor.getColumnIndex(COLUMN_COLOR));
+                String color1 = cursor.getString(cursor.getColumnIndex(COLUMN_COLOR1));
+                String color2 = cursor.getString(cursor.getColumnIndex(COLUMN_COLOR2));
 
-                return new Dog(duuid, name, owner, gender, color);
+                return new Dog(duuid, name, owner, gender, color1, color2);
             } while(cursor.moveToNext());
         }
 

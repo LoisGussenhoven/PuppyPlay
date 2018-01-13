@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
@@ -41,7 +42,9 @@ public class SocialActivity extends AppCompatActivity implements ZXingScannerVie
     TextView tvDogName;
     TextView tvDogName2;
     TextView tvOwnerName;
-    ImageView ivOtherDog1;
+    ImageView ivLayerOther1;
+    ImageView ivLayerOther2;
+    ImageView ivLayerOther3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +61,14 @@ public class SocialActivity extends AppCompatActivity implements ZXingScannerVie
         tvDogName = findViewById(R.id.social_tv_dog_name_other);
         tvDogName2 = findViewById(R.id.social_tv_name_other);
         tvOwnerName = findViewById(R.id.social_tv_owner_name_other);
-        ivOtherDog1 = findViewById(R.id.social_iv_dog_other);
+        ivLayerOther1 = findViewById(R.id.social_iv_dog_other_1);
+        ivLayerOther2 = findViewById(R.id.social_iv_dog_other_2);
+        ivLayerOther3 = findViewById(R.id.social_iv_dog_other_3);
+
+        ImageView layer = findViewById(R.id.social_iv_dog_self_1);
+        layer.setColorFilter(Color.parseColor("#" + Manager.yourDog.getColor1()), PorterDuff.Mode.MULTIPLY );
+        ImageView layer2 = findViewById(R.id.social_iv_dog_self_2);
+        layer2.setColorFilter(Color.parseColor("#" + Manager.yourDog.getColor2()), PorterDuff.Mode.MULTIPLY );
 
         ImageButton ibQr = findViewById(R.id.social_ib_qr);
         ibQr.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +78,8 @@ public class SocialActivity extends AppCompatActivity implements ZXingScannerVie
                         Manager.yourDog.getName() + "&&" +
                                 Manager.yourDog.getNameOwner() + "&&" +
                                 Manager.yourDog.getGender() + "&&" +
-                                Manager.yourDog.getColour()
+                                Manager.yourDog.getColor1() + "&&" +
+                                Manager.yourDog.getColor2()
                 );
             }
         });
@@ -91,13 +102,19 @@ public class SocialActivity extends AppCompatActivity implements ZXingScannerVie
         });
     }
 
-    private void update(String dog, String name){
+    private void update(String dog, String name, String color1, String color2){
         Log.i("UPDATE", dog + " " + name);
 
         tvDogName.setVisibility(View.VISIBLE);
         tvDogName2.setVisibility(View.VISIBLE);
         tvOwnerName.setVisibility(View.VISIBLE);
-        ivOtherDog1.setVisibility(View.VISIBLE);
+        ivLayerOther1.setVisibility(View.VISIBLE);
+        ivLayerOther2.setVisibility(View.VISIBLE);
+        ivLayerOther3.setVisibility(View.VISIBLE);
+
+        ivLayerOther1.setColorFilter(Color.parseColor("#" + color1), PorterDuff.Mode.MULTIPLY );
+        ivLayerOther2.setColorFilter(Color.parseColor("#" + color2), PorterDuff.Mode.MULTIPLY );
+
         tvDogName.setText(dog);
         tvDogName2.setText(dog);
         tvOwnerName.setText(name);
@@ -165,7 +182,7 @@ public class SocialActivity extends AppCompatActivity implements ZXingScannerVie
 
         Manager.yourDog.setSocial(100);
 
-        Dog dog = new Dog(results[0], results[1], results[2], Integer.parseInt(results[3]));
+        Dog dog = new Dog(results[0], results[1], results[2], results[3], results[4]);
 
         Location loc = new Location("");
         loc.setLatitude(getIntent().getExtras().getDouble("LAT"));
@@ -183,6 +200,6 @@ public class SocialActivity extends AppCompatActivity implements ZXingScannerVie
 
         init();
 
-        update(results[0], results[1]);
+        update(results[0], results[1], results[3], results[4] );
     }
 }
