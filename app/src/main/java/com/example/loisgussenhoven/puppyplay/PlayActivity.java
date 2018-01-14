@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.loisgussenhoven.puppyplay.Entity.Dog;
 
@@ -34,6 +35,9 @@ public class PlayActivity extends AppCompatActivity{
         setContentView(R.layout.activity_play);
 
         Dog dog = Manager.yourDog;
+
+        TextView tvDogName = findViewById(R.id.play_tv_dog_name);
+        tvDogName.setText(dog.getName());
 
         hunger = findViewById(R.id.AP_PB_Hunger);
         thirst = findViewById(R.id.AP_PB_Thirst);
@@ -82,6 +86,12 @@ public class PlayActivity extends AppCompatActivity{
                 thirst.setProgress((int)dog.getThirst() + 100);
                 hunger.setProgress((int)dog.getHunger() + 100);
 
+        });
+
+        ImageButton btnSettings = findViewById(R.id.AP_IB_Settings);
+        btnSettings.setOnClickListener(view -> {
+            Intent i = new Intent(getApplicationContext(), SettingsActivity.class);
+            startActivity(i);
         });
     }
 
