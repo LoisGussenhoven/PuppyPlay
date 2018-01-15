@@ -32,10 +32,11 @@
 
         <ImageView
             android:id="@+id/maps_iv_pooparea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"
+            android:scaleType="fitXY"
             android:src="@mipmap/ic_launcher_round"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
