@@ -1,4 +1,4 @@
-package com.example.loisgussenhoven.puppyplay.Services;
+package com.example.loisgussenhoven.puppyplay.services;
 
 import android.content.Context;
 

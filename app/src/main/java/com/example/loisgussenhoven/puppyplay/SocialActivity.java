@@ -20,11 +20,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.loisgussenhoven.puppyplay.Datalayer.DBObject;
-import com.example.loisgussenhoven.puppyplay.Entity.Dog;
-import com.example.loisgussenhoven.puppyplay.Entity.FriendSession;
+import com.example.loisgussenhoven.puppyplay.datalayer.DBObject;
+import com.example.loisgussenhoven.puppyplay.entity.Dog;
+import com.example.loisgussenhoven.puppyplay.entity.FriendSession;
 import com.google.zxing.BarcodeFormat;
-import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.Result;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;

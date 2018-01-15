@@ -3,18 +3,16 @@ package com.example.loisgussenhoven.puppyplay;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.loisgussenhoven.puppyplay.Entity.Dog;
+import com.example.loisgussenhoven.puppyplay.entity.Dog;
 
 import java.util.Timer;
 import java.util.TimerTask;

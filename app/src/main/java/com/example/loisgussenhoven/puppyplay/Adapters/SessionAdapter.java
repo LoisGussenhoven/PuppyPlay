@@ -1,4 +1,4 @@
-package com.example.loisgussenhoven.puppyplay.Adapters;
+package com.example.loisgussenhoven.puppyplay.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,8 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.loisgussenhoven.puppyplay.Entity.FriendSession;
-import com.example.loisgussenhoven.puppyplay.Manager;
+import com.example.loisgussenhoven.puppyplay.entity.FriendSession;
 import com.example.loisgussenhoven.puppyplay.R;
 import com.squareup.picasso.Picasso;
 

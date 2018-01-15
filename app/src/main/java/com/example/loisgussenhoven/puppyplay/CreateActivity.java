@@ -1,15 +1,11 @@
 package com.example.loisgussenhoven.puppyplay;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,9 +17,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.loisgussenhoven.puppyplay.Entity.Dog;
-
-import java.util.HashMap;
+import com.example.loisgussenhoven.puppyplay.entity.Dog;
 
 import static android.app.PendingIntent.getActivity;
 

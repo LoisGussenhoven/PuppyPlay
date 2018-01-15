@@ -1,4 +1,4 @@
-package com.example.loisgussenhoven.puppyplay.Location;
+package com.example.loisgussenhoven.puppyplay.location;
 
 import android.Manifest;
 import android.app.PendingIntent;
@@ -11,6 +11,7 @@ import android.os.Looper;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
+import com.example.loisgussenhoven.puppyplay.entity.Park;
 import com.example.loisgussenhoven.puppyplay.Manager;
 import com.example.loisgussenhoven.puppyplay.MapsActivity;
 import com.google.android.gms.location.Geofence;
@@ -138,25 +139,27 @@ public class LocationManager implements LocationListener {
         removeAllGeofences();
 
         if(gfc != null) {
-            // TODO: Add geofences
-//            for(Poi poi : r.getAllPoints()) {
-//                if(poi.isOnRoute()) {
-//                    try {
-//                        GeofencingRequest.Builder request = new GeofencingRequest.Builder();
-//                        request.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_DWELL);
-//                        Geofence fence = new Geofence.Builder().setRequestId(poi.getTitleEN()).setExpirationDuration(1000 * 60 * 15).setCircularRegion(poi.getPosition().latitude, poi.getPosition().longitude, 20).setLoiteringDelay(0).setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT | Geofence.GEOFENCE_TRANSITION_DWELL).build();
-//                        request.addGeofence(fence);
-//                        gfc.addGeofences(request.build(), getGeofencePendingIntent()).addOnSuccessListener(aVoid -> {
-//                            Log.e(TAG, "Geofence added succesfull");
-//                            allFences.add(fence);
-//                        }).addOnFailureListener(e -> {
-//                            Log.e(TAG, "Error while adding geofence");
-//                        });
-//                    } catch (SecurityException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            }
+            for(Park park : Manager.parks) {
+                try {
+                    GeofencingRequest.Builder request = new GeofencingRequest.Builder();
+                    request.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_DWELL);
+                    Geofence fence = new Geofence.Builder()
+                            .setRequestId(park.getUuid())
+                            .setExpirationDuration(1000 * 60 * 15)
+                            .setCircularRegion(park.getLocation().getLatitude(), park.getLocation().getLongitude(), 30)
+                            .setLoiteringDelay(0)
+                            .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT | Geofence.GEOFENCE_TRANSITION_DWELL)
+                            .build();
+                    request.addGeofence(fence);
+                    gfc.addGeofences(request.build(), getGeofencePendingIntent()).addOnSuccessListener(aVoid -> {
+                        allFences.add(fence);
+                    }).addOnFailureListener(e -> {
+                        Log.e(TAG, e.getMessage());
+                    });
+                } catch (SecurityException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }

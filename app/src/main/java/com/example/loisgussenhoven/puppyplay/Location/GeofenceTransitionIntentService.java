@@ -1,4 +1,4 @@
-package com.example.loisgussenhoven.puppyplay.Location;
+package com.example.loisgussenhoven.puppyplay.location;
 
 import android.app.IntentService;
 import android.content.Intent;
@@ -15,8 +15,8 @@ import com.google.android.gms.location.GeofencingEvent;
 public class GeofenceTransitionIntentService extends IntentService {
 
     public GeofenceTransitionIntentService() {
-        super("Mapsactivity");
-        Log.e("GEOFENCE CONSTRUCTOR", "INTENT SERVICE AANGEMAAKT");
+        super("PuppyPlayIntentService");
+        Log.e("GEOFENCE CONSTRUCT", "INTENT ONTVANGEN");
     }
 
     @Override
@@ -33,6 +33,8 @@ public class GeofenceTransitionIntentService extends IntentService {
             return;
         }
         int geofenceTransition = gfE.getGeofenceTransition();
+
+        Log.i("BOY", "onHandleIntent: handle intent");
 
         Intent lbcIntent = new Intent("googlegeofence");
         lbcIntent.putExtra("name", gfE.getTriggeringGeofences().get(0).getRequestId());

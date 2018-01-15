@@ -1,8 +1,9 @@
 package com.example.loisgussenhoven.puppyplay;
 
-import android.location.Location;
+import com.example.loisgussenhoven.puppyplay.entity.Dog;
+import com.example.loisgussenhoven.puppyplay.entity.Park;
 
-import com.example.loisgussenhoven.puppyplay.Entity.Dog;
+import java.util.List;
 
 /**
  * Created by Nick van Endhoven on 12-1-2018.
@@ -11,4 +12,5 @@ import com.example.loisgussenhoven.puppyplay.Entity.Dog;
 public class Manager {
 
     public static Dog yourDog;
+    public static List<Park> parks;
 }

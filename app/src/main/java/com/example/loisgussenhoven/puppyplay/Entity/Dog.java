@@ -1,4 +1,4 @@
-package com.example.loisgussenhoven.puppyplay.Entity;
+package com.example.loisgussenhoven.puppyplay.entity;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -143,6 +143,10 @@ public class Dog implements Serializable {
        if (social >0)
            setSocial(social - 0.1);
        if (poop > 0)
-        setPoop(poop + 0.1);
+        setPoop(poop - 0.1);
+    }
+
+    public void startPooping() {
+        // TODO: 15-Jan-18  POOP slowly
     }
 }

@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.loisgussenhoven.puppyplay.Adapters.SessionAdapter;
-import com.example.loisgussenhoven.puppyplay.Datalayer.DBObject;
-import com.example.loisgussenhoven.puppyplay.Entity.FriendSession;
+import com.example.loisgussenhoven.puppyplay.adapters.SessionAdapter;
+import com.example.loisgussenhoven.puppyplay.datalayer.DBObject;
+import com.example.loisgussenhoven.puppyplay.entity.FriendSession;
 
 import java.util.List;
 

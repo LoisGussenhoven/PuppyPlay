@@ -1,6 +1,5 @@
-package com.example.loisgussenhoven.puppyplay.Entity;
+package com.example.loisgussenhoven.puppyplay.entity;
 
-import android.graphics.Bitmap;
 import android.location.Location;
 import java.io.Serializable;
 import java.util.Date;

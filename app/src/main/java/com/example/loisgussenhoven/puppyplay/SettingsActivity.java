@@ -4,10 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.loisgussenhoven.puppyplay.Datalayer.DBObject;
+import com.example.loisgussenhoven.puppyplay.datalayer.DBObject;
 
 public class SettingsActivity extends AppCompatActivity {
 

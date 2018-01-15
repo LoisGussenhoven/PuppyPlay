@@ -1,4 +1,4 @@
-package com.example.loisgussenhoven.puppyplay.Datalayer;
+package com.example.loisgussenhoven.puppyplay.datalayer;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

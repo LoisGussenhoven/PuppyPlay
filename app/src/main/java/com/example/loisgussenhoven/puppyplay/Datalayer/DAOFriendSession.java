@@ -1,16 +1,15 @@
-package com.example.loisgussenhoven.puppyplay.Datalayer;
+package com.example.loisgussenhoven.puppyplay.datalayer;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
 
-import com.example.loisgussenhoven.puppyplay.Entity.FriendSession;
+import com.example.loisgussenhoven.puppyplay.entity.FriendSession;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by Nick van Endhoven, 2119719 on 30-Dec-17.

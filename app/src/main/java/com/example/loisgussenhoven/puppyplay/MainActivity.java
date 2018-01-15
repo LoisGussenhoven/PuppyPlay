@@ -2,19 +2,20 @@ package com.example.loisgussenhoven.puppyplay;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.loisgussenhoven.puppyplay.ApiHandling.ApiHandler;
-import com.example.loisgussenhoven.puppyplay.Datalayer.DBObject;
-import com.example.loisgussenhoven.puppyplay.Entity.Dog;
-import com.example.loisgussenhoven.puppyplay.Entity.FriendSession;
-import java.util.Date;
+import com.example.loisgussenhoven.puppyplay.handlers.ApiHandler;
+import com.example.loisgussenhoven.puppyplay.handlers.ApiHandlerResponse;
+import com.example.loisgussenhoven.puppyplay.datalayer.DBObject;
+import com.example.loisgussenhoven.puppyplay.entity.Dog;
+import com.example.loisgussenhoven.puppyplay.entity.Park;
+
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ApiHandlerResponse{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
         DBObject.init(getApplicationContext());
         ApiHandler.init(getApplicationContext());
+
+        ApiHandler.getInstance().attachListener(this);
+
+        ApiHandler.getInstance().getParks();
 
         new Timer().schedule(new TimerTask() {
             public void run() {
@@ -45,9 +50,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, CreateActivity.class));
             }
         }, 2000);
-
-
-        // TODO: 12-1-2018 Read your dog data 
     }
 
+    @Override
+    public void onReceived(List<Park> parks) {
+        Manager.parks = parks;
+    }
 }
