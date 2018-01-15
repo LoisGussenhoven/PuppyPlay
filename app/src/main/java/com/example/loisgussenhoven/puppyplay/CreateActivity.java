@@ -3,6 +3,7 @@ package com.example.loisgussenhoven.puppyplay;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.support.v7.app.AlertDialog;
@@ -90,11 +91,19 @@ public class CreateActivity extends AppCompatActivity {
                 Dog dog = new Dog(String.valueOf(ET_DogName.getText()), String.valueOf(ET_Name.getText()), "", colors[spColor1.getSelectedItemPosition()], colors[spColor2.getSelectedItemPosition()]);
                 Manager.yourDog = dog;
 
+                SharedPreferences.Editor editor = getSharedPreferences("PUPPYPLAYPREFS", MODE_PRIVATE).edit();
+                editor.putBoolean("created", true);
+                editor.putString("name", String.valueOf(ET_Name.getText()));
+                editor.putString("dog_name", String.valueOf(ET_DogName.getText()));
+                editor.putString("gender", "");
+                editor.putString("color1", colors[spColor1.getSelectedItemPosition()]);
+                editor.putString("color2", colors[spColor2.getSelectedItemPosition()]);
+                editor.apply();
+
                 Intent i = new Intent(getApplicationContext(), PlayActivity.class);
                 startActivity(i);
                 finish();
             }
-
         });
     }
 
