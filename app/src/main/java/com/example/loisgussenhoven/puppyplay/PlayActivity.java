@@ -59,8 +59,6 @@ public class PlayActivity extends AppCompatActivity{
                 thirst.post(() -> thirst.setProgress((int)dog.getThirst()));
                 poop.post(() -> poop.setProgress((int)dog.getPoop()));
                 social.post(() -> social.setProgress((int)dog.getSocial()));
-                social.getProgress();
-
             }
         };timer.schedule (hourlyTask,0,1000);
 
@@ -78,10 +76,10 @@ public class PlayActivity extends AppCompatActivity{
 
         ImageButton btnNeeds = findViewById(R.id.AP_IB_Needs);
         btnNeeds.setOnClickListener(view -> {
-            if(dog.getThirst() < 100 || dog.getHunger() < 100)
-                thirst.setProgress((int)dog.getThirst() + 100);
-                hunger.setProgress((int)dog.getHunger() + 100);
-
+            thirst.setProgress(thirst.getMax());
+            hunger.setProgress(hunger.getMax());
+            dog.setThirst(100);
+            dog.setHunger(100);
         });
     }
 
