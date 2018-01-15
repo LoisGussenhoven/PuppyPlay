@@ -142,7 +142,7 @@ public class LocationManager implements LocationListener {
             for(Park park : Manager.parks) {
                 try {
                     GeofencingRequest.Builder request = new GeofencingRequest.Builder();
-                    request.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_DWELL);
+                    request.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_EXIT);
                     Geofence fence = new Geofence.Builder()
                             .setRequestId(park.getUuid())
                             .setExpirationDuration(1000 * 60 * 15)

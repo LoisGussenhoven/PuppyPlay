@@ -21,11 +21,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/main_ib_paw"
         app:layout_constraintVertical_bias="0.689" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/main_ib_paw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"

@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 
 import com.example.loisgussenhoven.puppyplay.handlers.ApiHandler;
 import com.example.loisgussenhoven.puppyplay.handlers.ApiHandlerResponse;
@@ -29,6 +32,13 @@ public class MainActivity extends AppCompatActivity implements ApiHandlerRespons
 
         ApiHandler.getInstance().getParks();
 
+        ImageButton ibPaw = findViewById(R.id.main_ib_paw);
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
+        animation.reset();
+        animation.setRepeatMode(Animation.INFINITE);
+        ibPaw.startAnimation(animation);
+
+
         new Timer().schedule(new TimerTask() {
             public void run() {
                 SharedPreferences prefs = getSharedPreferences("PUPPYPLAYPREFS", MODE_PRIVATE);
@@ -49,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements ApiHandlerRespons
 
                 startActivity(new Intent(MainActivity.this, CreateActivity.class));
             }
-        }, 2000);
+        }, 5000);
     }
 
     @Override

@@ -36,8 +36,9 @@
             android:layout_height="125dp"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"
+            android:alpha=".4"
             android:scaleType="fitXY"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/dogpoopsign"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
