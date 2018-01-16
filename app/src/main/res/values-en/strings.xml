@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">PuppyPlay</string>
     <string name="made_by">Made by Lois Gussenhoven and Nick van Endhoven</string>
-    <string name="welcome_talk">Welcome to the app</string>
+    <string name="welcome_talk">Welcome, create your dog!</string>
     <string name="name">Your name</string>
     <string name="male">Male dog</string>
     <string name="create">Create</string>
@@ -13,4 +13,7 @@
     <string name="thirst">Thirst</string>
     <string name="hunger">Hunger</string>
     <string name="social">Social</string>
+    <string name="loading">loading</string>
+    <string name="AllInfo">Fill in all forms</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

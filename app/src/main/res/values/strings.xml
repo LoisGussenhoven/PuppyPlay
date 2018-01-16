@@ -5,7 +5,7 @@
     <string name="female">Vrouwtjes hond</string>
     <string name="male">Mannetjes hond</string>
     <string name="create">Aanmaken</string>
-    <string name="welcome_talk">Welkom bij de app, de rest mag nick verzinnen</string>
+    <string name="welcome_talk">Welkom, creeer uw hond!</string>
     <string name="name_dog">Naam van je hond</string>
     <string name="hunger">Honger</string>
     <string name="thirst">Dorst</string>
@@ -14,4 +14,5 @@
     <string name="social">Sociaal</string>
     <string name="loading">laden</string>
     <string name="title_activity_maps">Map</string>
+    <string name="allInfo">Vul in alle gegevens</string>
 </resources>

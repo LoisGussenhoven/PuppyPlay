@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -19,7 +21,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.example.loisgussenhoven.puppyplay.entity.Park;
+import com.example.loisgussenhoven.puppyplay.entity.json.Directions;
+import com.example.loisgussenhoven.puppyplay.handlers.RouteHandler;
 import com.example.loisgussenhoven.puppyplay.location.LocationManager;
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.maps.CameraUpdate;
@@ -31,20 +37,26 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.common.collect.Lists;
+import com.google.maps.android.PolyUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, Response.Listener<Directions>, Response.ErrorListener {
 
     private static final String TAG = "MAPS";
     private GoogleMap mMap;
+    public String directionPoints;
     private List<Marker> allMarkers = new ArrayList<>();
     
     private boolean mLocationPermissionGranted;
     private LocationManager locationManager;
 
     Location location = new Location("");
+    Polyline polyline;
 
     ImageView ivPoopArea;
 
@@ -88,6 +100,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(51.594184, 4.779178), 18));
         mMap.clear();
+
+        mMap.setOnMarkerClickListener(this);
 
         addAllMarkersFromRoute(Manager.parks);
         locationManager.addAllGeofences();
@@ -167,9 +181,76 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.animateCamera(cameraUpdate);
     }
 
+
+    private List<LatLng> decodePoly(String encoded) {
+        List<LatLng> poly = new ArrayList<>();
+        int index = 0, len = encoded.length();
+        int lat = 0, lng = 0;
+
+        while (index < len) {
+            int b, shift = 0, result = 0;
+            do {
+                b = encoded.charAt(index++) - 63;
+                result |= (b & 0x1f) << shift;
+                shift += 5;
+            } while (b >= 0x20);
+            int dlat = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
+            lat += dlat;
+
+            shift = 0;
+            result = 0;
+            do {
+                b = encoded.charAt(index++) - 63;
+                result |= (b & 0x1f) << shift;
+                shift += 5;
+            } while (b >= 0x20);
+            int dlng = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
+            lng += dlng;
+
+            LatLng p = new LatLng( (((double) lat / 1E5)),
+                    (((double) lng / 1E5) ));
+            poly.add(p);
+        }
+        return poly;
+    }
+
     @Override
     public boolean onMarkerClick(Marker marker) {
-        return false;
+        Log.e("OnMarkerClick", "ACK");
+        makeRoute(marker.getPosition());
+        return true;
+    }
+
+
+    private void makeRoute(LatLng point){
+        RouteHandler rh = new RouteHandler(MapsActivity.this);
+        Log.e("MakeRoute", "ACK");
+        List<LatLng> points = new ArrayList<>();
+        points.add(new LatLng(location.getLatitude(), location.getLongitude()));
+        points.add(point);
+        rh.getDirections(points, MapsActivity.this, MapsActivity.this);
+    }
+
+
+    @Override
+    public void onResponse(Directions response) {
+        Log.e("OnResponse", "ACK");
+
+        if (response.routes.size() == 0) return;
+        if (polyline != null) polyline.remove();
+
+        directionPoints = response.routes.get(0).overviewPolyline.points;
+        List<LatLng> decoded = decodePoly(directionPoints);
+        polyline =  mMap.addPolyline(new PolylineOptions()
+                .addAll(decoded)
+                .width(12f)
+                .color(Color.BLUE)
+                .geodesic(true)
+        );
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
     }
 
 
