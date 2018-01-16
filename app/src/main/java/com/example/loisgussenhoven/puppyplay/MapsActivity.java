@@ -103,7 +103,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap.setOnMarkerClickListener(this);
 
-        addAllMarkersFromRoute(Manager.parks);
+        if(Manager.parks.size() > 0)
+            addAllMarkersFromRoute(Manager.parks);
+
         locationManager.addAllGeofences();
     }
 
