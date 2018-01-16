@@ -157,6 +157,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void geofenceEnter(String geoFenceName) {
+        Manager.yourDog.startPooping();
+
         ivPoopArea = findViewById(R.id.maps_iv_pooparea);
         ivPoopArea.setVisibility(View.VISIBLE);
     }
@@ -169,6 +171,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void geofenceExit(String geoFenceName) {
+        Manager.yourDog.stopPooping();
+
         ivPoopArea = findViewById(R.id.maps_iv_pooparea);
         ivPoopArea.setVisibility(View.INVISIBLE);
     }

@@ -20,18 +20,7 @@ public class Dog implements Serializable {
     private double thirst;
     private double poop;
     private double social;
-
-    public Dog(String name, String nameOwner, String gender, String color1, String color2, double hunger, double thirst, double poop, double social) {
-        this.name = name;
-        this.nameOwner = nameOwner;
-        this.color1 = color1;
-        this.color2 = color2;
-        this.gender = gender;
-        this.hunger = hunger;
-        this.thirst = thirst;
-        this.poop = poop;
-        this.social = social;
-    }
+    private boolean pooping = false;
 
     public Dog(String uuid, String name, String nameOwner, String gender, String color1, String color2) {
         this.uuid = uuid;
@@ -144,9 +133,20 @@ public class Dog implements Serializable {
            setSocial(social - 0.1);
        if (poop > 0)
         setPoop(poop - 0.1);
+
+       if(pooping && poop < 100)
+           setPoop(poop += 5);
+
+        if(poop > 100)
+            setPoop(100);
+
     }
 
     public void startPooping() {
-        // TODO: 15-Jan-18  POOP slowly
+        pooping = true;
+    }
+
+    public void stopPooping() {
+        pooping = false;
     }
 }
